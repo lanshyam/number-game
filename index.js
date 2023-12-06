@@ -20,12 +20,12 @@ function startGame() {
             let input = parseInt(prompt(playerName + ", enter your guess (between 1 and 100,000):"));
 
             if (isNaN(input) || input <= 0 || input > 100000) {
-                alert("Invalid input. Please enter a number between 1 and 100.");
+                alert("Invalid input. Please enter a number between 1 and 100,000.");
             }
 
             tries++;
 
-            if (tries == 100) {
+            if (tries == 20) {
                 alert("you have exceeded the maximum amount of tries")
                 break;
             }
