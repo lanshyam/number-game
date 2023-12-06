@@ -12,18 +12,22 @@ function startGame() {
     for (let i = 0; i < numPlayers; i++) {
         let playerName = prompt("Enter Player " + (i + 1) + "'s name:");
 
-        const answer = Math.floor(Math.random() * 100 + 1);
+        const answer = Math.floor(Math.random() * 100000 + 1);
 
         let tries = 0;
 
         while (true) {
-            let input = parseInt(prompt(playerName + ", enter your guess (between 1 and 100):"));
+            let input = parseInt(prompt(playerName + ", enter your guess (between 1 and 100,000):"));
 
-            if (isNaN(input) || input <= 0 || input > 100) {
+            if (isNaN(input) || input <= 0 || input > 100000) {
                 alert("Invalid input. Please enter a number between 1 and 100.");
             }
 
             tries++;
+
+            if (tries == 100) {
+                alert("you have exceeded the maximum amount of tries")
+            }
 
             if (input === answer) {
                 alert("Congratulations, " + playerName + "! That's correct. Your score is " + (101 - tries));
