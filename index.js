@@ -25,7 +25,10 @@ function startGame() {
 
             tries++;
 
-            
+            if (tries == 100) {
+                alert("you have exceeded the maximum amount of tries")
+                break;
+            }
 
             if (input === answer) {
                 alert("Congratulations, " + playerName + "! That's correct. Your score is " + (101 - tries));
